@@ -40,11 +40,11 @@ Install the requirements in a virual environment using
 ```
 pip install -r requirements.txt
 ```
-To replicate results in the paper, please follow [Saliency-prediction-for-360-video](https://github.com/vhchuong1997/Saliency-prediction-for-360-degree-video). This is the dataset and model used in the paper. 
+To replicate results in the paper, please follow [Saliency-prediction-for-360-video](https://github.com/vhchuong1997/Saliency-prediction-for-360-degree-video). This is the saliency model used in the paper. The dataset can be downloaded here - [dataset](https://drive.google.com/file/d/1ZPPUrgYxRqpryhGgaM31ov8v82tdMVF8/view?usp=sharing).  
 
-Modify the parameters in *params.py*.
+Unzip the dataset in the project folder, accordingly modify the parameters in *params.py*.
 
-Run main.py to train model and get results. Trained weights to be added soon.
+Run main.py to train model and get a test run of the model. Trained weights to be added soon.
 ```
 python main.py
 ```
