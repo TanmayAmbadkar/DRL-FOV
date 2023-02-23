@@ -25,3 +25,20 @@ A Deep RL framework consists of an environment and agent. We have created a cust
 ![framework](assets/block_diagram.png)
 
 
+If you find this work helpful, please consider citing
+ ```
+ @article{Ambadkar2022,
+  doi = {10.2352/ei.2022.34.10.ipas-367},
+  url = {https://doi.org/10.2352/ei.2022.34.10.ipas-367},
+  year = {2022},
+  month = jan,
+  publisher = {Society for Imaging Science {\&} Technology},
+  volume = {34},
+  number = {10},
+  pages = {367--1--367--5},
+  author = {Tanmay Ambadkar and Pramit Mazumdar},
+  title = {Deep reinforcement learning approach to predict head movement in 360{\&}amp$\mathsemicolon${\#}{xB}0$\mathsemicolon$ videos},
+  journal = {Electronic Imaging}
+}
+```
+
