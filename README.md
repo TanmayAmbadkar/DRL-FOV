@@ -8,7 +8,7 @@ Paper URL: [link](https://library.imaging.org/ei/articles/34/10/IPAS-367)
 
 ## Model Architecture
 
-The model architecture can be broken down into 2 parts. The first part processes an individual 360 saliency frame to get an embedding for it. The downstream model takes all embeddings to output an action. 
+The model architecture can be broken down into two parts. The first part processes an individual 360 saliency frame to get an embedding. The downstream model takes all embeddings to output an action. 
 
 ### Frame Embedding Model
 
@@ -20,7 +20,7 @@ The model architecture can be broken down into 2 parts. The first part processes
 
 ## Framework
 
-A Deep RL framework consists of an environment and agent. We have created a custom environment for this task, which provides the starting frame, next frame on performning an action and a reward function. The agent is a Deep QN agent with 9 actions. It interacts with the environment to learn how to find the highest probable FOV. The following image describes the interactions of the environment and the agent. 
+A Deep RL framework consists of an environment and an agent. We have created a custom environment for this task, which provides the starting frame, the next frame for performing an action, and a reward function. The agent is a Deep QN agent with nine actions. It interacts with the environment to learn how to find the highest probable FOV. The following image describes the interactions between the environment and the agent. 
 
 ![framework](assets/block_diagram.png)
 
@@ -30,7 +30,7 @@ Some selected FOVs can be seen here
 
 ![result](assets/results.png)
 
-A small gif showing the selected FOV is
+A short gif showing the selected FOV is
 
 ![fov](assets/project1.gif)
 
