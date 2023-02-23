@@ -1,6 +1,4 @@
-# Deep reinforcement learning approach to predict head movement in 360° videos
-*Tanmay Ambadkar, Pramit Mazumdar*
--------
+# Deep reinforcement learning approach to predict head movement in 360° videos - *Tanmay Ambadkar, Pramit Mazumdar*
 
 ## Abstract
 
