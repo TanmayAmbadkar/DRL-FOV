@@ -1,8 +1,10 @@
 import time
+
 import matplotlib.pyplot as plt
 
+
 def train(agent, env, episodes=100):
-        
+
     observation = env.reset()
     batch_size = 16
     for _ in range(episodes):
@@ -13,5 +15,5 @@ def train(agent, env, episodes=100):
             agent.memory.append((observation, action, reward, next_observation, done))
             observation = next_observation
             agent.batch_train(batch_size)
-    
+
     return agent

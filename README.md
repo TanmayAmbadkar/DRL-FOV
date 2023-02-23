@@ -40,6 +40,7 @@ Install the requirements in a virual environment using
 ```
 pip install -r requirements.txt
 ```
+To replicate results in the paper, please follow [Saliency-prediction-for-360-video](https://github.com/vhchuong1997/Saliency-prediction-for-360-degree-video). This is the dataset and model used in the paper. 
 
 Modify the parameters in *params.py*.
 
