@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from conv_block import ConvBlock
-from residual_block import ResidualBlock
+from models.conv_block import ConvBlock
+from models.residual_block import ResidualBlock
 
 
 class FOVSelectionNet(nn.Module):
@@ -11,7 +11,7 @@ class FOVSelectionNet(nn.Module):
         super(FOVSelectionNet, self).__init__()
 
         self.n_frames = n_frames
-        self.conv_blocks = [ConvBlock(residual_depth)]
+        self.conv_blocks = [ConvBlock(residual_depth)]*self.n_frames
         self.conv_blocks = nn.Sequential(*self.conv_blocks)
         self.fc1 = nn.Linear(1792 * self.n_frames, 256)
         self.fc2 = nn.Linear(256, 128)

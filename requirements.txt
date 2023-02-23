@@ -2,6 +2,6 @@ torch
 numpy
 matplotlib
 tqdm
-PIL
+pillow
 seaborn
 videofig

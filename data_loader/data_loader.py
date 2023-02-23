@@ -14,9 +14,8 @@ def load_data(images_dir):
     '''
     images = [images_dir+"/"+f for f in os.listdir(images_dir) if os.path.isfile(os.path.join(images_dir, f))]
     print(f"Total number of images: {len(images)//3}")
-
-    images_saliency = np.zeros((len(images)//3},240,480*2))
-    images_color = np.zeros((len(images)//3},240,480*2,3))
+    images_saliency = np.zeros((len(images)//3,240,480*2))
+    images_color = np.zeros((len(images)//3,240,480*2,3))
 
     for i in tqdm(range(0,len(images))):
         if i%3==0:

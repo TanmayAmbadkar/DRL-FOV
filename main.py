@@ -24,11 +24,11 @@ env = Environment(
 agent = Agent(**params['Agent'])
 
 if params["train"]:
-    agent = train(agent, env, episodes=params["Agent"]["episodes"])
-    torch.save(agent.model.state_dict(), params["Agent"]["save_path"])
+    agent = train(agent, env, episodes=params["episodes"])
+    torch.save(agent.model.state_dict(), params["save_path"])
 
 # Testing
-agent.model.load_state_dict(torch.load(params["Agent"]["save_path"]))
+agent.model.load_state_dict(torch.load(params["save_path"]))
 rendered = np.zeros((env.video_frames, env.frame_height, env.frame_width, 3))
 observation = env.reset()
 batch_size = 12

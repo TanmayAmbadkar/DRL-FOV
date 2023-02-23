@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from residual_block import ResidualBlock
+from models.residual_block import ResidualBlock
 
 
 class ConvBlock(nn.Module):
@@ -27,7 +27,7 @@ class ConvBlock(nn.Module):
         )
         self.bn2 = nn.BatchNorm2d(32)
         self.prelu2 = nn.PReLU()
-        self.cnn3 = n.Conv2d(
+        self.cnn3 = nn.Conv2d(
             in_channels=32,
             out_channels=16,
             kernel_size=9,
@@ -35,6 +35,7 @@ class ConvBlock(nn.Module):
             padding=1,
         )
         self.bn3 = nn.BatchNorm2d(16)
+        self.prelu3 = nn.PReLU()
         self.flatten = nn.Flatten()
 
     def forward(self, x):
