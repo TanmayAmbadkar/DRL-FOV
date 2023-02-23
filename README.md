@@ -24,6 +24,15 @@ A Deep RL framework consists of an environment and agent. We have created a cust
 
 ![framework](assets/block_diagram.png)
 
+## Results
+
+Some selected FOVs can be seen here
+
+![result](assets/results.png)
+
+A small gif showing the selected FOV is
+
+![fov](assets/project1.gif)
 
 If you find this work helpful, please consider citing
  ```
