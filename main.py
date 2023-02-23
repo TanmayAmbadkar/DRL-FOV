@@ -5,21 +5,22 @@ from train.train import train
 import torch
 import matplotlib.pyplot as plt
 import numpy as np
+from params import params
 
-images_dir = "360_saliency_dataset_2018eccv/output"
-images_color, images_saliency = load_data(images_dir)
+images_color, images_saliency = load_data(params['images_dir'])
 
 # TRAINING
 
-env = Environment(saliency_frames = images_saliency, colored_frames = images_color, n_frames = 2, video_frames=200, frame_width=160, frame_height=90)
+env = Environment(saliency_frames = images_saliency, colored_frames = images_color, n_frames = params['Environment']['n_frames'], video_frames=params['Environment']['video_frames'], frame_width=params['Environment']['frame_width'], frame_height=params['Environment']['frame_height'])
 
-agent = Agent(n_frames = 2)
+agent = Agent(n_frames = params['Environment']['n_frames'])
 
-agent = train(agent, env, episodes=100)
+if params['train']:
+    agent = train(agent, env, episodes=params['Agent']['episodes'])
+    torch.save(agent.model.state_dict(), params['Agent']['save_path'])
 
-torch.save(agent.model.state_dict(), "saved_agents/agent2frame.model")
 # Testing
-
+agent.model.load_state_dict(torch.load(params['Agent']['save_path']))
 rendered = np.zeros((env.video_frames,env.frame_height, env.frame_width, 3))
 observation = env.reset()
 batch_size = 12
