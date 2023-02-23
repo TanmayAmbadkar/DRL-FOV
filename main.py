@@ -21,7 +21,7 @@ env = Environment(
     frame_height=params["Environment"]["frame_height"],
 )
 
-agent = Agent(n_frames=params["Environment"]["n_frames"])
+agent = Agent(**params['Agent'])
 
 if params["train"]:
     agent = train(agent, env, episodes=params["Agent"]["episodes"])

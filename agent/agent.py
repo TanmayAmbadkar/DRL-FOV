@@ -9,22 +9,22 @@ from models.model import FOVSelectionNet
 
 
 class Agent:
-    def __init__(self, action_space=9, n_frames=5):
+    def __init__(self, gamma=0.3, epsilon=1.0, epsilon_final=0.01, epsilon_decay=0.995, lr=0.0001, n_frames=5):
 
         self.memory = deque(maxlen=300)
         self.inventory = []
-        self.action_space = action_space
-        self.gamma = 0.3
-        self.epsilon = 1.0
-        self.epsilon_final = 0.01
-        self.epsilon_decay = 0.995
+        self.action_space = 9
+        self.gamma = gamma
+        self.epsilon = epsilon
+        self.epsilon_final = epsilon_final
+        self.epsilon_decay = epsilon_decay
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         # self.device = torch.device("cpu")
         self.n_frames = n_frames
         self.model = FOVSelectionNet(n_frames=self.n_frames)
         self.model.to(self.device)
         print(self.device)
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0001)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr = lr)
 
     @torch.no_grad()
     def training_action(self, state):
