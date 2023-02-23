@@ -49,7 +49,6 @@ Run main.py to train model and get results. Trained weights to be added soon.
 python main.py
 ```
 ----
-```
 If you find this work helpful, please consider citing
  ```
  @article{Ambadkar2022,
